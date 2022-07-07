@@ -92,8 +92,8 @@ class ViewController: UIViewController {
             }
             sleep(3)
             DispatchQueue.main.async {
-                self.showAlert()
                 self.uiIndicator.isHidden = true
+                self.showAlert()
                 self.uiIndicator.stopAnimating()
             }
         }
@@ -105,8 +105,6 @@ class ViewController: UIViewController {
 extension UIImageView {
     
     func makeRounded() {
-        
-        
         layer.masksToBounds = false
         layer.cornerRadius = self.frame.height / 2
         clipsToBounds = true
