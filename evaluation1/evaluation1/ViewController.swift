@@ -15,11 +15,15 @@ class ViewController: UIViewController {
     @IBOutlet var passwordImage : UIImageView!
     @IBOutlet var login : UITextField!
     @IBOutlet var switchButton : UISwitch!
+    @IBOutlet var uiIndicator : UIActivityIndicatorView!
     
     override func viewDidLoad() {
+        uiIndicator.isHidden = true
         super.viewDidLoad()
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(changeviewPassword))
         passwordImage.addGestureRecognizer(recognizer)
+        login.delegate = self
+        passwordField.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -72,12 +76,29 @@ class ViewController: UIViewController {
        
         let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         if predicate.evaluate(with: login.text) && passwordField.text?.count ?? 0 >= 4 {
-            showAlert()
+            performLogin()
         } else{
             showError()
         }
             
     }
+    
+    func performLogin(){
+    
+        DispatchQueue.global(qos: .background).async{
+            DispatchQueue.main.async {
+                self.uiIndicator.isHidden = false
+                self.uiIndicator.startAnimating()
+            }
+            sleep(3)
+            DispatchQueue.main.async {
+                self.showAlert()
+                self.uiIndicator.isHidden = true
+                self.uiIndicator.stopAnimating()
+            }
+        }
+    }
+
 }
 
 
@@ -89,5 +110,18 @@ extension UIImageView {
         layer.masksToBounds = false
         layer.cornerRadius = self.frame.height / 2
         clipsToBounds = true
+    }
+}
+extension ViewController: UITextFieldDelegate{
+
+    func textFieldShouldReturn(_ textField: UITextField)->Bool{
+        if textField == login{
+            passwordField.becomeFirstResponder()
+        }else if (textField == passwordField){
+            view.endEditing(true)
+        }
+        
+
+        return true
     }
 }

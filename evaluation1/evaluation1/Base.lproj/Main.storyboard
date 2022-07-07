@@ -78,6 +78,15 @@
                                     <constraint firstItem="N0b-qM-WVa" firstAttribute="leading" secondItem="5Af-uh-X6n" secondAttribute="leading" id="xJy-be-1XJ"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inscription à la newsletter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOb-tv-3Kr">
+                                <rect key="frame" x="107.5" y="417" width="199" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Gah-E5-0mN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dDU-Xu-Pqw">
                                 <rect key="frame" x="183.5" y="453" width="49" height="29"/>
                                 <constraints>
@@ -101,15 +110,14 @@
                                     <action selector="show" destination="BYZ-38-t0r" eventType="touchUpInside" id="y47-MT-J2B"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inscription à la newsletter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOb-tv-3Kr">
-                                <rect key="frame" x="107.5" y="417" width="199" height="26"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kxA-pu-PgZ">
+                                <rect key="frame" x="187" y="428" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="Gah-E5-0mN"/>
+                                    <constraint firstAttribute="width" constant="40" id="L9W-cB-dmd"/>
+                                    <constraint firstAttribute="height" constant="40" id="qnn-O3-Mx5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="color" systemColor="systemYellowColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -124,8 +132,10 @@
                             <constraint firstAttribute="bottom" secondItem="MG6-Wl-jTw" secondAttribute="bottom" id="QCu-VC-Y4P"/>
                             <constraint firstItem="dDU-Xu-Pqw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QfF-zS-ai9"/>
                             <constraint firstItem="oOb-tv-3Kr" firstAttribute="top" secondItem="5Af-uh-X6n" secondAttribute="bottom" constant="15" id="Sbe-t8-Vfc"/>
+                            <constraint firstItem="kxA-pu-PgZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WZv-dq-K3Q"/>
                             <constraint firstItem="dDU-Xu-Pqw" firstAttribute="top" secondItem="oOb-tv-3Kr" secondAttribute="bottom" constant="10" id="bKd-aC-0c9"/>
                             <constraint firstItem="oOb-tv-3Kr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ha6-Tc-Dcs"/>
+                            <constraint firstItem="kxA-pu-PgZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m7C-vC-Gh9"/>
                             <constraint firstItem="Qko-mr-9Ek" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="ozQ-ZS-f4e"/>
                             <constraint firstAttribute="trailing" secondItem="MG6-Wl-jTw" secondAttribute="trailing" id="pHb-Iy-H5n"/>
                             <constraint firstItem="5Af-uh-X6n" firstAttribute="top" secondItem="Qko-mr-9Ek" secondAttribute="bottom" constant="44.5" id="z0E-Ua-RDs"/>
@@ -137,6 +147,7 @@
                         <outlet property="passwordField" destination="N63-aD-Lu7" id="hy7-w1-xVc"/>
                         <outlet property="passwordImage" destination="IHe-B0-suk" id="HmU-ST-x12"/>
                         <outlet property="switchButton" destination="dDU-Xu-Pqw" id="7S7-ik-dDV"/>
+                        <outlet property="uiIndicator" destination="kxA-pu-PgZ" id="9Yw-Uf-DQc"/>
                         <outlet property="userImage" destination="Qko-mr-9Ek" id="7rI-OF-3fj"/>
                     </connections>
                 </viewController>
@@ -151,6 +162,9 @@
         <image name="user_icon" width="200" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
