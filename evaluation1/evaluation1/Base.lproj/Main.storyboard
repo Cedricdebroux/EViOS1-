@@ -55,7 +55,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye_on_icon" translatesAutoresizingMaskIntoConstraints="NO" id="IHe-B0-suk">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye_on_icon" translatesAutoresizingMaskIntoConstraints="NO" id="IHe-B0-suk">
                                                 <rect key="frame" x="344" y="0.0" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="iGg-BZ-iIS"/>
@@ -78,7 +78,7 @@
                                     <constraint firstItem="N0b-qM-WVa" firstAttribute="leading" secondItem="5Af-uh-X6n" secondAttribute="leading" id="xJy-be-1XJ"/>
                                 </constraints>
                             </stackView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDU-Xu-Pqw">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dDU-Xu-Pqw">
                                 <rect key="frame" x="183.5" y="453" width="49" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="KsB-iB-I8b"/>
@@ -129,6 +129,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordField" destination="N63-aD-Lu7" id="hy7-w1-xVc"/>
+                        <outlet property="passwordImage" destination="IHe-B0-suk" id="HmU-ST-x12"/>
                         <outlet property="userImage" destination="Qko-mr-9Ek" id="7rI-OF-3fj"/>
                     </connections>
                 </viewController>

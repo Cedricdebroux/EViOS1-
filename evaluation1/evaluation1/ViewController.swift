@@ -10,9 +10,13 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var userImage : UIImageView!
+    @IBOutlet var passwordField : UITextField!
+    @IBOutlet var passwordImage : UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(changeviewPassword))
+        passwordImage.addGestureRecognizer(recognizer)
         // Do any additional setup after loading the view.
     }
 
@@ -20,7 +24,23 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         userImage.makeRounded()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            view.endEditing(true)
+        }
 
+    @objc func changeviewPassword(){
+        
+        if passwordField.isSecureTextEntry == true {
+            passwordField.isSecureTextEntry = false
+            passwordImage.image = UIImage(named: "eye_off_icon")
+        }else {
+            passwordField.isSecureTextEntry = true
+            passwordImage.image = UIImage(named: "eye_on_icon")
+        }
+        print("test button")
+        
+    }
 }
 
 extension UIImageView {
