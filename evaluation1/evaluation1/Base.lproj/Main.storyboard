@@ -42,7 +42,7 @@
                                             <constraint firstAttribute="width" constant="374" id="Jae-gH-evS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="nickname"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="N0b-qM-WVa">
                                         <rect key="frame" x="0.0" y="79" width="374" height="34"/>
@@ -96,6 +96,10 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                     <color key="baseBackgroundColor" red="0.050980389119999997" green="0.2823529541" blue="0.2117646933" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveContact" destination="BYZ-38-t0r" eventType="touchUpInside" id="gcZ-CD-h2f"/>
+                                    <action selector="show" destination="BYZ-38-t0r" eventType="touchUpInside" id="y47-MT-J2B"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inscription à la newsletter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOb-tv-3Kr">
                                 <rect key="frame" x="107.5" y="417" width="199" height="26"/>
@@ -129,8 +133,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="login" destination="xMB-d6-IQ5" id="GkG-mn-y9A"/>
                         <outlet property="passwordField" destination="N63-aD-Lu7" id="hy7-w1-xVc"/>
                         <outlet property="passwordImage" destination="IHe-B0-suk" id="HmU-ST-x12"/>
+                        <outlet property="switchButton" destination="dDU-Xu-Pqw" id="7S7-ik-dDV"/>
                         <outlet property="userImage" destination="Qko-mr-9Ek" id="7rI-OF-3fj"/>
                     </connections>
                 </viewController>
